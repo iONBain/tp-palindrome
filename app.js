@@ -30,14 +30,14 @@ function isPalindrome(str){
 
 function convertDateToStr(date){
    var dateStr = {day:'', month:'',year:''}
-   if(dateStr.day<10){
-    dateStr.day = "0"+date.day
+   if(date.day < 10){
+    dateStr.day = "0" + date.day
    }
    else{
     dateStr.day = date.day.toString();
    } 
-   if(dateStr.month<10){
-    dateStr.month = "0"+date.month
+   if(date.month < 10){
+    dateStr.month = "0" + date.month
    }
    else{
     dateStr.month = date.month.toString();
@@ -125,19 +125,18 @@ function getNextDate(date){
 
 function getNextPalindrome(date){
     var cnt = 0;
-    var nextDate = getNextDate(date)
+    var nextDate = getNextDate(date);
 
     while(1){
         cnt++;
         var isPalindromeFlag = checkPalindrome(nextDate);
         if(isPalindromeFlag){
-            var finDate = nextDate
             break;
         }
         nextDate = getNextDate(nextDate);
 
     }
-    return [cnt, finDate];
+    return [cnt, nextDate];
 }
 
 
@@ -148,21 +147,17 @@ function getNextPalindrome(date){
 
 
 var date = {
-    day: 1,
-    month: 1,
+    day: 31,
+    month: 12,
     year: 2020
 }
 
-
-
-
-
-console.log(reverseStr("hello"))
-console.log(isPalindrome("hello"))
-console.log(isPalindrome("racecar"))
+// console.log(reverseStr("hello"))
+// console.log(isPalindrome("hello"))
+// console.log(isPalindrome("racecar"))
 console.log(convertDateToStr(date))
 console.log(getAllDateFormats(date))
 console.log(checkPalindrome(date))
-console.log(getNextDate(date))
-console.log(isLeapYear(2020))
+// console.log(getNextDate(date))
+// console.log(isLeapYear(2020))
 console.log(getNextPalindrome(date))

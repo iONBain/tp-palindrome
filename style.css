@@ -3,17 +3,23 @@
 }
 :root{
     --colorBG: #072c50;
+    --colorBG2: #041c34;
+    --colorBGLight: #1a62aa2a;
     --colorP2: #e4e4e4;
     --colorM1: #f36239;
+    /* margin: 0; */
+    /* padding: 0; */
 
 }
 body{
     height: 100vh;
     /* width: 80vw; */
+    margin: 0;
     box-sizing: border-box;
     background-color: var(--colorBG);
     color: var(--colorM1);
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -23,26 +29,35 @@ body{
 }
 main{
     display: flex;
+    height: 90vh;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     align-content: center;
+    background-color: var(--colorBGLight);
 }
 h1{
     display: flex;
+    width: 70vw;
+    background-color: var(--colorBG2);
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     color: var(--colorP2);
     margin-bottom: 0;
+    margin-top: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 #desc{
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
 #bday-input{
-    width: 40%;
+    width: 20%;
     padding: 10px;
     border-radius: 8px;
     margin: 0;
@@ -52,7 +67,7 @@ h1{
 }
 #btnCalc{
     background-color: var(--colorM1);
-    width: 20%;
+    width: 10%;
     padding: 10px;
     margin: 0;
     border-radius: 8px;
@@ -74,6 +89,29 @@ h1{
 }
 
 
+/* footer */
+footer{
+    color: var(--colorP2);
+    height: 10vh;
+    /* grid-area: footer; */
+    /* height: 10vh; */
+    width: 70vw;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: var(--colorBG2);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.links{
+    text-decoration: none;
+    color: var(--dblue);
+    padding: 0px 5px;
+}
 
 
 

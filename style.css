@@ -29,7 +29,7 @@ body{
 }
 main{
     display: flex;
-    height: 90vh;
+    height: 70vh;
     flex-direction: column;
     gap: 20px;
     align-items: center;
@@ -92,7 +92,7 @@ h1{
 /* footer */
 footer{
     color: var(--colorP2);
-    height: 10vh;
+    /* height: 30vh; */
     /* grid-area: footer; */
     /* height: 10vh; */
     width: 70vw;

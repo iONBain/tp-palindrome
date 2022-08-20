@@ -1,11 +1,7 @@
-
-
-
-
-
-
-
-
+var dateInput = document.getElementById("bday-input")
+var btnCalc = document.getElementById("btnCalc")
+var resultRef = document.getElementById("result")
+var resultRef2 = document.getElementById("result2")
 
 
 
@@ -139,25 +135,118 @@ function getNextPalindrome(date){
     return [cnt, nextDate];
 }
 
+function getPrevDate(date){
+    var day = date.day-1;
+    var month = date.month;
+    var year = date.year;
+    var daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
 
-
-
-
-
-
-
-var date = {
-    day: 31,
-    month: 12,
-    year: 2020
+    if(month===3){
+        //leap year
+        if(isLeapYear(year)){
+            if(day<1){
+                day=29;
+                month--;
+            }}
+            else{
+                if(day<1){
+                    day=28;
+                    month--;
+                }
+            }
+    }
+    else{
+        if(day<1){
+            day=daysInMonth[month-2]
+            month--;
+        }
+    }
+    if(month<1){
+        day=31;
+        month=12;
+        year--;
+    }
+    return {
+        day: day,
+        month: month,
+        year: year
+    }
 }
 
+function getPrevPalindrome(date){
+    var cnt = 0;
+    var prevDate = getPrevDate(date);
+
+    while(1){
+        cnt++;
+        var isPalindromeFlag = checkPalindrome(prevDate);
+        if(isPalindromeFlag){
+            break;
+        }
+        prevDate = getPrevDate(prevDate);
+
+    }
+    return [cnt, prevDate];
+}
+
+//click handler function 
+function clickFunc(){
+    // console.log(dateInput.value)
+    var bdayStr = dateInput.value
+
+    if(bdayStr !== ''){
+        var listOfDate = bdayStr.split('-');
+        var date = {
+            day: Number(listOfDate[2]),
+            month: Number(listOfDate[1]),
+            year: Number(listOfDate[0])
+        };
+        // console.log(date);
+
+        var isPalinDate = checkPalindrome(date);
+        console.log(isPalinDate)
+        if(isPalinDate){
+            resultRef.innerHTML = "Yes! Your birthday is a Palindrome 😍"
+        }
+        else{
+            let prevPalin = getPrevPalindrome(date);
+            let nextPalin = getNextPalindrome(date);
+            if(prevPalin[0]<nextPalin[0]){
+                resultRef.innerHTML = `The previous palindrome date is ${prevPalin[1].day}-${prevPalin[1].month}-${prevPalin[1].year}.`;
+                resultRef2.innerHTML = `Just missed by ${prevPalin[0]} days! 🥲`;
+                // console.log("Prev")
+            }
+            else{
+                resultRef.innerHTML = `The next palindrome date is ${nextPalin[1].day}-${nextPalin[1].month}-${nextPalin[1].year}.`;
+                resultRef2.innerHTML = `Just missed by ${nextPalin[0]} days! 🥲`;
+                // console.log("Next")
+            }
+            
+        }
+    }
+    else{
+        resultRef.innerHTML = "Haha 😂, Please enter a date"
+    }
+}
+
+//adding event listner
+btnCalc.addEventListener("click",clickFunc)
+
+
+// var date = {
+//     day: 2,
+//     month: 2,
+//     year: 2020
+// }
 // console.log(reverseStr("hello"))
 // console.log(isPalindrome("hello"))
 // console.log(isPalindrome("racecar"))
-console.log(convertDateToStr(date))
-console.log(getAllDateFormats(date))
-console.log(checkPalindrome(date))
+// console.log(convertDateToStr(date))
+// console.log(getAllDateFormats(date))
+//  console.log(checkPalindrome(date))
 // console.log(getNextDate(date))
 // console.log(isLeapYear(2020))
-console.log(getNextPalindrome(date))
+// console.log(getNextPalindrome(date))
+// console.log((date))
+// console.log(getPrevDate(date))
+// console.log(getPrevPalindrome(date))

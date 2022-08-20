@@ -1,0 +1,77 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+:root{
+    --colorBG: #072c50;
+    --colorP2: #e4e4e4;
+    --colorM1: #f36239;
+
+}
+body{
+    height: 100vh;
+    /* width: 80vw; */
+    box-sizing: border-box;
+    background-color: var(--colorBG);
+    color: var(--colorM1);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    /* border: 2px solid red; */
+    font: optional;
+    overflow: hidden;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    align-content: center;
+}
+h1{
+    color: var(--colorP2);
+    margin-bottom: 0;
+}
+#bday-input{
+    width: 40%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    
+}
+#btnCalc{
+    background-color: var(--colorM1);
+    width: 30%;
+    padding: 10px;
+    margin: 0;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+#btnCalc:hover{
+    color: var(--colorBG);
+    background-color: var(--colorP2);
+}
+#result{
+    color: var(--colorP2);
+    margin-bottom: 0;
+}
+#result2{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+
+
+
+/* classes */
+.white{
+    color: var(--colorP2);
+}
+.orange{
+    color: var(--colorM1);
+}

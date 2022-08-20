@@ -105,6 +105,7 @@ footer{
     border-top-right-radius: 40px;
     background-color: var(--colorBG2);
     padding: 30px;
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;

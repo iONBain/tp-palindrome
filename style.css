@@ -29,8 +29,17 @@ main{
     align-content: center;
 }
 h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: var(--colorP2);
     margin-bottom: 0;
+}
+#desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 #bday-input{
     width: 40%;
@@ -43,7 +52,7 @@ h1{
 }
 #btnCalc{
     background-color: var(--colorM1);
-    width: 30%;
+    width: 20%;
     padding: 10px;
     margin: 0;
     border-radius: 8px;

@@ -1,7 +1,7 @@
 # Palindrome Birthday Checker
 An app to check if your Birthday is a Palindrome or not. If not, it will tell you the nearest Palindrome date 
 * from previous dates or 
-* frpm upcoming dates
+* from upcoming dates
 
 >Displays the nearest Palindrome date
 

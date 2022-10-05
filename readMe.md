@@ -10,11 +10,11 @@ Here are a few project-related insight pictures:
 1. Landing Page 
 ![landingpage](./images/landing.png)
 2. Case1: "Birthdate is Palindrome"- 
-![choice select](./images/output1.png)
+![ouput1](./images/output1.png)
 3. Case2: "Birthdate is not a Palindrome"- Showing the next nearest Palindrome
-![choice select](./images/output2.png)
+![ouput2](./images/output2.png)
 4. Case3: "Birthdate is not a Palindrome"- Showing the previous nearest Palindrome
-![choice select](./images/output3.png)
+![ouput3](./images/output3.png)
 
 
 > Technologies/Libraries used :-
